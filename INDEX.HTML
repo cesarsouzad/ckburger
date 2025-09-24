@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CK Burger - Peça Online!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="INDEX.HTML">
+                <img src="img/BURGER.png" alt="CK Burger Logo" class="logo">
+            </a>    
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Cardápio</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="open-cart-button" class="cart-button">
+                Carrinho (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1 id="tituloDinamico"></h1>
+                <p>Peça online, receba rapidinho!</p>
+                <a href="#menu-section" class="btn btn-primary">VER CARDÁPIO</a>
+            </div>
+            <div class="hero-image">
+                <video autoplay muted loop playsinline class="video-bg">
+                    <source src="img/banner-video.mp4" type="video/mp4">
+                </video>
+  </div>
+        </section>
+
+        <section class="offers-carousel">
+            <h2>Promoções Especiais!</h2>
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide product-item" data-id="oferta-1" data-name="Combo Mega Cheddar" data-price="32.90">
+                        <img src="img/combo1.png" alt="Combo Mega Cheddar">
+                        <h3>Combo Mega Cheddar</h3>
+                        <p>Mega Cheddar + Batata Média + Coca-Cola Lata.</p>
+                        <span class="price">R$ 39,90</span>
+                        <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                    </div>
+                    <div class="swiper-slide product-item" data-id="oferta-2" data-name="Combo Bacon Supreme" data-price="35.90">
+                        <img src="img/combo2.png" alt="Combo Bacon Supreme">
+                        <h3>Combo Bacon Supreme</h3>
+                        <p>Bacon Supreme + Batata Média + Coca-Cola Lata.</p>
+                        <span class="price">R$ 48,00</span>
+                        <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                    </div>
+                    <div class="swiper-slide product-item" data-id="oferta-3" data-name="Combo Frango Crocante" data-price="35.90">
+                        <img src="img/combo3.png" alt="Combo Frango Crocante">
+                        <h3>Combo Frango Crocante</h3>
+                        <p>Frango Crocante + Batata Média + Coca-Cola Lata.</p>
+                        <span class="price">R$ 35,90</span>
+                        <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                    </div>
+                    </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section id="menu-section" class="menu-section">
+            <h2>Nosso Cardápio Principal</h2>
+            <div class="product-grid">
+                <div class="product-item" data-id="burger-x" data-name="Mega Cheddar" data-price="25.90">
+                    <img src="img/Mega-Cheddar.png" alt="Mega Cheddar">
+                    <h3>Mega Cheddar</h3>
+                    <p>Hambúrguer de carne bovina, cheddar cremoso, cebola caramelizada.</p>
+                    <span class="price">R$ 29,90</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+
+                <div class="product-item" data-id="burger-y" data-name="Frango Crispy" data-price="22.50">
+                    <img src="img/frango-crocante.png" alt="Frango Crispy">
+                    <h3>Frango Crispy</h3>
+                    <p>Hamburger de Filé de frango empanado crocante, alface, tomate, maionese especial.</p>
+                    <span class="price">R$ 22,50</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+
+                <div class="product-item" data-id="burger-z" data-name="Vegetariano Delight" data-price="28.00">
+                    <img src="img/bacon-supreme.png" alt="Bacon Supremo">
+                    <h3>Bacon Supremo</h3>
+                    <p>Hambúrguer artesanal de duas carnes bovinas, cheddar cremoso, bacon e molho barbecue artesanal.</p>
+                    <span class="price">R$ 38,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+
+                <div class="product-item" data-id="coca-cola" data-name="Coca-Cola Lata" data-price="7.00">
+                    <img src="img/coca-cola.jpg" alt="Coca-Cola Lata">
+                    <h3>Coca-Cola Lata</h3>
+                    <p>Refrigerante Coca-Cola em lata.</p>
+                    <span class="price">R$ 7,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="cart-hidden">
+        <div class="cart-header">
+            <h2>Seu Pedido</h2>
+            <button id="close-cart" class="close-button">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items-list">
+            </div>
+        <div class="cart-summary">
+            <p>Subtotal: <span id="cart-total">R$ 0,00</span></p>
+            <p class="delivery-info">Taxa de Entrega: A calcular</p>
+        </div>
+        <button id="checkout-whatsapp" class="btn btn-primary btn-full-width">Fazer Pedido via WhatsApp</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="img/BURGER.png" alt="CK Burger Belo Horizonte">
+          </div>
+          <p>O verdadeiro sabor feito na brasa 🔥</p>
+      
+          <div class="footer-contacts">
+            <a href="tel:+5531999999999">
+              📞 (31) 99999-9999
+            </a>
+            <a href="mailto:contato@ckburger.com">
+              ✉️ contato@ckburger.com
+            </a>
+            <a href="https://wa.me/5531999999999" target="_blank">
+              💬 WhatsApp
+            </a>
+            <a href="https://instagram.com/ckburger" target="_blank">
+              📷 Instagram
+            </a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 Ck Burger - Todos os direitos reservados</p>
+        </div>
+      </footer>
+      
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="titulo-dinamico.js"></script>
+    <script src="script.js"></script>
+ 
+</body>
+</html>
