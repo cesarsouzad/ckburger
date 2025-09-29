@@ -151,7 +151,34 @@
             </a>
           </div>
         </div>
-      
+        
+        <div id="modalConfirmacao" class="modal-overlay cart-hidden">
+    <div class="modal-content">
+        <span class="close-btn-modal">&times;</span>
+        <h2>Dados para Confirmação do Pedido</h2>
+        <form id="formularioCliente">
+            
+            <label for="clienteNome">Seu Nome Completo:</label>
+            <input type="text" id="clienteNome" name="clienteNome" required>
+
+            <label for="clienteRua">Rua e Número:</label>
+            <input type="text" id="clienteRua" name="clienteRua" placeholder="Ex: Rua das Flores, 123" required>
+
+            <label for="clienteBairro">Bairro:</label>
+            <input type="text" id="clienteBairro" name="clienteBairro" required>
+
+            <label for="clienteReferencia">Ponto de Referência (Opcional):</label>
+            <input type="text" id="clienteReferencia" name="clienteReferencia" placeholder="Ex: Ao lado da farmácia">
+
+            <label for="clienteWhatsapp">Seu WhatsApp (Principal):</label>
+            <input type="tel" id="clienteWhatsapp" name="clienteWhatsapp" placeholder="DDD + Número (ex: 31987654321)" required>
+
+            <button type="submit" id="finalizarPedidoModalBtn" class="btn btn-primary btn-full-width">
+                Confirmar e Enviar para WhatsApp
+            </button>
+        </form>
+    </div>
+</div>
         <div class="footer-bottom">
           <p>&copy; 2025 Ck Burger - Todos os direitos reservados</p>
         </div>

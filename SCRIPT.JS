@@ -9,6 +9,11 @@ const cartSidebar = document.getElementById('cart-sidebar');
 const openCartButton = document.getElementById('open-cart-button');
 const closeCartButton = document.getElementById('close-cart');
 const checkoutWhatsappButton = document.getElementById('checkout-whatsapp');
+// VARIÁVEIS DO NOVO MODAL
+// ----------------------------------------------------
+const modalConfirmacao = document.getElementById('modalConfirmacao');
+const formularioCliente = document.getElementById('formularioCliente');
+const fecharModalBtn = document.querySelector('.close-btn-modal');
 
 // Função para atualizar a exibição do carrinho
 function updateCartDisplay() {
@@ -87,30 +92,64 @@ closeCartButton.addEventListener('click', () => {
 updateCartDisplay();
 
 // Telefone do seu WhatsApp Business (com código do país e DDD, sem + ou outros caracteres especiais)
-const whatsappNumber = '5531984833222'; // Exemplo: 55 para Brasil, 11 para DDD SP
+const whatsappNumber = '5531984833222'; // Seu número
 
+// ----------------------------------------------------
+// LÓGICA DE ABRIR/FECHAR MODAL
+// ----------------------------------------------------
+
+// 1. O clique no botão "Fazer Pedido via WhatsApp" AGORA SÓ ABRE O MODAL
 checkoutWhatsappButton.addEventListener('click', () => {
     if (cart.length === 0) {
         alert('Seu carrinho está vazio. Adicione itens antes de fazer o pedido!');
         return;
     }
+    // Fecha a sidebar do carrinho
+    cartSidebar.classList.add('cart-hidden');
+    // Abre o modal de dados
+    modalConfirmacao.classList.remove('cart-hidden');
+});
 
-    // 1. Coleta os dados do cliente (ex: nome e endereço)
-    // Para simplificar, vou criar um prompt, mas você idealmente teria um formulário no seu checkout.
-    const clientName = prompt('Qual o seu nome?');
-    if (!clientName) return; // Se o cliente cancelar, não prossegue
+// 2. Fechar o modal pelo botão "x"
+fecharModalBtn.addEventListener('click', () => {
+    modalConfirmacao.classList.add('cart-hidden');
+});
 
-    const clientAddress = prompt('Qual o seu endereço para entrega?');
-    if (!clientAddress) return; // Se o cliente cancelar, não prossegue
+// 3. Fechar o modal clicando fora dele
+modalConfirmacao.addEventListener('click', (event) => {
+    if (event.target === modalConfirmacao) {
+        modalConfirmacao.classList.add('cart-hidden');
+    }
+});
 
-    const clientPhone = prompt('Qual o seu telefone com DDD para contato?');
-    if (!clientPhone) return; // Se o cliente cancelar, não prossegue
+
+// ----------------------------------------------------
+// LÓGICA DE ENVIO (NOVA FUNÇÃO)
+// ----------------------------------------------------
+
+formularioCliente.addEventListener('submit', (event) => {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    // 1. Coleta os dados do cliente do formulário
+    const clientName = document.getElementById('clienteNome').value;
+    const clientRua = document.getElementById('clienteRua').value;
+    const clientBairro = document.getElementById('clienteBairro').value;
+    const clientReferencia = document.getElementById('clienteReferencia').value;
+    const clientWhatsapp = document.getElementById('clienteWhatsapp').value;
 
     // 2. Monta a mensagem do pedido
     let orderMessage = `*NOVO PEDIDO - CK BURGER*\n\n`;
     orderMessage += `*Cliente:* ${clientName}\n`;
-    orderMessage += `*Endereço:* ${clientAddress}\n`;
-    orderMessage += `*Telefone:* ${clientPhone}\n\n`;
+    orderMessage += `*WhatsApp/Contato:* ${clientWhatsapp}\n\n`;
+    
+    orderMessage += `*ENDEREÇO DE ENTREGA:*\n`;
+    orderMessage += `Rua/Nº: ${clientRua}\n`;
+    orderMessage += `Bairro: ${clientBairro}\n`;
+    if (clientReferencia) {
+        orderMessage += `Ponto de Ref.: ${clientReferencia}\n`;
+    }
+    orderMessage += `\n`;
+
     orderMessage += `*Itens do Pedido:*\n`;
 
     let total = 0;
@@ -131,11 +170,14 @@ checkoutWhatsappButton.addEventListener('click', () => {
     // 5. Abre o link (irá abrir o WhatsApp do usuário)
     window.open(whatsappLink, '_blank');
 
-    // Opcional: Limpar o carrinho após o envio
+    // Opcional: Limpar o carrinho e fechar o modal
     cart = [];
     updateCartDisplay();
-    alert('Seu pedido foi enviado! Em breve entraremos em contato via WhatsApp.');
+    modalConfirmacao.classList.add('cart-hidden');
+    formularioCliente.reset(); // Limpa os campos após o envio
+    alert('Seu pedido será enviado para o WhatsApp! Finalize o envio na nova janela/aba.');
 });
+
 
 // Inicializa o carrossel de ofertas
 var swiper = new Swiper(".mySwiper", {
