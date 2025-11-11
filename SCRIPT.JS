@@ -15,30 +15,55 @@ const modalConfirmacao = document.getElementById('modalConfirmacao');
 const formularioCliente = document.getElementById('formularioCliente');
 const fecharModalBtn = document.querySelector('.close-btn-modal');
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCartDisplay();
+    }
+});
+
 // Função para atualizar a exibição do carrinho
 function updateCartDisplay() {
     cartItemsContainer.innerHTML = ''; // Limpa o conteúdo atual
 
     let total = 0;
+    const taxaEntrega = 5; // valor fixo da entrega até 3km
+
     cart.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.classList.add('cart-item');
         itemElement.innerHTML = `
-            <div class="cart-item-info">
-                <span class="cart-item-name">${item.name}</span>
-                <div class="quantity-controls">
-                    <button class="decrease-qty" data-id="${item.id}">-</button>
-                    <span class="quantity">${item.quantity}</span>
-                    <button class="increase-qty" data-id="${item.id}">+</button>
-                </div>
-                <span class="cart-item-price">R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}</span>
-            </div>
-            <button class="remove-from-cart" data-id="${item.id}">Remover</button>
-        `;
+      <div class="cart-item-info">
+        <span class="cart-item-name">${item.name}</span>
+        
+        <div class="cart-controls">
+          <div class="quantity-controls">
+            <button class="decrease-qty" data-id="${item.id}">-</button>
+            <span class="quantity">${item.quantity}</span>
+            <button class="increase-qty" data-id="${item.id}">+</button>
+            <span class="unit-price">R$ ${item.price.toFixed(2).replace('.', ',')} un</span>
+          </div>
+          <button class="remove-from-cart" data-id="${item.id}">Remover</button>
+        </div>
+
+        <div class="cart-item-total">
+          <strong>Total:</strong> R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}
+        </div>
+      </div>
+    `;
+
         cartItemsContainer.appendChild(itemElement);
         total += item.price * item.quantity;
     });
 
+    // Se houver itens no carrinho, soma a taxa de entrega
+    if (cart.length > 0) {
+        total += taxaEntrega;
+    }
+
+    // Atualiza os valores na interface
     cartTotalSpan.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
     cartCountSpan.textContent = cart.length > 0 ? cart.reduce((sum, item) => sum + item.quantity, 0) : 0;
 
@@ -55,6 +80,7 @@ function updateCartDisplay() {
         button.addEventListener('click', decreaseQuantity);
     });
 }
+
 
 // ===== FUNÇÃO DE MODAL DE ALERTA =====
 const alertModal = document.getElementById('alertModal');
@@ -88,6 +114,7 @@ function addToCart(event) {
     }
 
     updateCartDisplay();
+    saveCart();
 }
 
 // Função para remover um item do carrinho
@@ -103,16 +130,20 @@ function removeFromCart(event) {
         }
     }
     updateCartDisplay();
+    saveCart();
 }
+
+//botao para aumentar quantidade de itens
 function increaseQuantity(event) {
     const id = event.target.dataset.id;
     const item = cart.find(i => i.id === id);
     if (item) {
         item.quantity++;
         updateCartDisplay();
+        saveCart();
     }
 }
-
+//botao para diminuir quantidade de itens
 function decreaseQuantity(event) {
     const id = event.target.dataset.id;
     const item = cart.find(i => i.id === id);
@@ -123,6 +154,7 @@ function decreaseQuantity(event) {
         cart = cart.filter(i => i.id !== id);
     }
     updateCartDisplay();
+    saveCart();
 }
 
 
@@ -175,6 +207,11 @@ modalConfirmacao.addEventListener('click', (event) => {
 });
 
 
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+
 // ----------------------------------------------------
 // LÓGICA DE ENVIO (NOVA FUNÇÃO)
 // ----------------------------------------------------
@@ -205,12 +242,18 @@ formularioCliente.addEventListener('submit', (event) => {
     orderMessage += `*Itens do Pedido:*\n`;
 
     let total = 0;
-    cart.forEach(item => {
-        orderMessage += `- ${item.name} (${item.quantity}x) - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
-        total += item.price * item.quantity;
-    });
+cart.forEach(item => {
+    orderMessage += `- ${item.name} (${item.quantity}x) - R$ ${item.price.toFixed(2).replace('.', ',')} un | Total: R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}\n`;
+    total += item.price * item.quantity;
+});
 
+    // Adiciona taxa mínima de entrega
+    const taxaEntrega = 5.00;
+    total += taxaEntrega;
+
+    orderMessage += `\n*Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2).replace('.', ',')}`;
     orderMessage += `\n*Total do Pedido:* R$ ${total.toFixed(2).replace('.', ',')}\n\n`;
+    orderMessage += `⚠️ A taxa de entrega pode variar conforme a distância (mínimo R$ 5,00).\n`;
     orderMessage += `Aguardamos a confirmação!`;
 
     // 3. Codifica a mensagem para URL
@@ -225,6 +268,7 @@ formularioCliente.addEventListener('submit', (event) => {
     // Opcional: Limpar o carrinho e fechar o modal
     cart = [];
     updateCartDisplay();
+    saveCart();
     modalConfirmacao.classList.add('cart-hidden');
     formularioCliente.reset(); // Limpa os campos após o envio
     alert('Seu pedido será enviado para o WhatsApp! Finalize o envio na nova janela/aba.');
