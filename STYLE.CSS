@@ -919,8 +919,23 @@ ease;
         font-size: 2.8em;
     }
 
+    .main-nav ul .nav-hide-mobile {
+        display: none;
+    }
+
     .main-nav ul {
-        display: none; /* Poderia ser um menu hamburger */
+        /* Garante que o container de links seja exibido */
+        display: flex; 
+        /* Centraliza os links restantes (Cardápio e Ofertas) */
+        justify-content: center;
+        /* Remove a margem lateral desnecessária no mobile */
+        padding: 0; 
+        width: auto;
+    }
+    /* Ajusta o espaçamento dos links restantes */
+    .main-nav ul li {
+        margin-left: 15px; /* Reduz o espaço entre os links */
+        margin-right: 15px;
     }
 
     .header-content {
@@ -973,7 +988,7 @@ ease;
     .main-nav {
         display: flex; /* Ou block, se o seu nav se torna vertical em mobile */
         flex-direction: column; /* Se os itens do menu se empilham */
-        width: 100%;
+        width:55%;
         padding: 10px; /* Ajuste o padding para telas pequenas */
         position: relative; /* Ou 'fixed' se você quiser ele sempre visível no topo */
         top: 0;
