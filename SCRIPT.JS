@@ -305,3 +305,29 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // ⚠️ ALTERADO: Pega o elemento pelo novo ID
+    const modalContainer = document.getElementById('chamada-conteiner');
+    const fecharBotao = document.querySelector('.fechar-modal');
+
+    // Função para mostrar o modal
+    function mostrarModal() {
+        modalContainer.style.display = 'flex'; 
+    }
+
+    // Função para esconder o modal
+    function esconderModal() {
+        modalContainer.style.display = 'none'; 
+    }
+
+    mostrarModal();
+
+    fecharBotao.addEventListener('click', esconderModal);
+
+    // Fechar o modal clicando fora dele
+    modalContainer.addEventListener('click', function(event) {
+        if (event.target === modalContainer) {
+            esconderModal();
+        }
+    });
+});

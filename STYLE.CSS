@@ -157,7 +157,107 @@ p {
     background-color: #e67300;
 }
 
+/*----------------modal inicial-------------------------*/
+/* -------------------------------------------------------------------------- */
+/* 1. CONTAINER DO MODAL (OVERLAY ESCURO E CENTRALIZAÇÃO) */
+/* -------------------------------------------------------------------------- */
+.modal-inicial-container {
+    /* Ocupa a tela toda */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* FUNDO ESCURO (OVERLAY) - RESOLVENDO SEU ERRO */
+    background-color: rgba(0, 0, 0, 0.8); 
+    
+    /* Garante que fique acima do conteúdo da página */
+    z-index: 1100; /* Um z-index alto, mas menor que o do modal */
+    
+    /* ESTA PARTE É CRUCIAL PARA CENTRALIZAR O MODAL FILHO */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;   /* Centraliza verticalmente */
+}
 
+/* -------------------------------------------------------------------------- */
+/* 2. O MODAL INTERNO (Onde está o seu banner/background) */
+/* -------------------------------------------------------------------------- */
+.modal-inicial {
+    /* CORREÇÃO 1: REMOVER O POSICIONAMENTO FIXO AQUI */
+    /* Remove 'position: fixed', 'top: 100px', 'left: 25%' e 'align-self: center' */
+    /* A centralização será feita pelo container (display: flex) */
+    position: relative; /* Usamos 'relative' para o botão de fechar funcionar */
+    
+    /* Largura específica que você pediu (50% da largura do container, que aqui será a largura máxima) */
+    width: 100%; 
+    max-width: 600px; 
+    
+    /* ... (restante do código igual para background, padding, etc.) */
+    min-height: 400px; 
+    background-image: url('img/modal-inicial.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-color: white; 
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    
+    /* Garante que o modal fique acima do overlay */
+    z-index: 1200; 
+
+    /* Mantém a lógica de layout para os botões no final */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: auto;
+    align-items: center;
+}
+
+/* Botões de Redirecionamento (Mantenha o estilo para centralização no rodapé) */
+.modal-botoes {
+    position: absolute;
+    bottom: -15%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 0 0 12px 12px; /* Opcional: arredonda só os cantos inferiores */
+    width: 80%;
+}
+.modal-botoes a{
+    box-shadow: 0px 0px 15px 7px var(--primary-color);
+    width: 52px;
+    height: 52px;
+    border-radius: 15px; 
+    transition: 1s;
+}
+.modal-inicial a:hover{
+    box-shadow: 0px 0px 15px 7px var(--gray-light);
+    transform: scale(1.2);
+}
+.fechar-modal {
+    /* 1. POSICIONAMENTO ABSOLUTO */
+    position: absolute; 
+    
+    /* 2. DEFINIÇÃO DA POSIÇÃO (CANTO SUPERIOR DIREITO) */
+    top: 10px;    /* Distância do topo do modal */
+    right: 15px;  /* Distância da lateral direita do modal */
+
+    /* 3. GARANTIA DE VISIBILIDADE E INTERAÇÃO */
+    background: var(--gray-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 28px;
+    color: var(--text-dark); /* Use uma cor que se destaque no seu background, talvez preto/cinza */
+    /* Caso a imagem de fundo tenha área clara, use '#333'. Se a área for escura, use 'white'. */
+    padding: 0px 5px;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1210; /* Deve ser maior que o modal (1200) para garantir que seja clicável */
+    font-weight: bold;
+}
+/* ... */
 
 /* Hero Section */
 .hero-section {
@@ -381,6 +481,30 @@ p {
     display: block;
     margin-bottom: 20px;
 }
+/*INDISPINIBILIDADE DE PRODUTOS*/
+.status-embreve {
+    /* Deixa o card um pouco mais apagado */
+    opacity: 0.6; 
+    /* Garante que não seja clicável acidentalmente */
+    pointer-events: none;
+}
+.status-embreve img{
+    filter: grayscale(80%);
+    transition: filter 0.3S ease;
+}
+.status-badge {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    background-color: #ff9800; /* Cor Laranja/Aviso */
+    border-radius: 4px;
+    /* Substitui o espaço que o botão de adicionar ocuparia */
+    width: 100%; 
+}
+/*------------------------------------------------*/
 
 /* Cart Sidebar */
 #cart-sidebar {
@@ -845,5 +969,27 @@ ease;
     .footer
     {
         max-width: 100%;
+    }
+    .main-nav {
+        display: flex; /* Ou block, se o seu nav se torna vertical em mobile */
+        flex-direction: column; /* Se os itens do menu se empilham */
+        width: 100%;
+        padding: 10px; /* Ajuste o padding para telas pequenas */
+        position: relative; /* Ou 'fixed' se você quiser ele sempre visível no topo */
+        top: 0;
+        left: 0;
+        /* Se ele era 'display: none' em telas grandes, este 'display: flex' o mostra */
+    }
+    .main-nav .nav-links {
+        display: flex; /* Mostra os links */
+        flex-direction: column; /* Empilha os links */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .main-nav .nav-links a {
+        padding: 8px 0;
+        text-align: center;
+        border-bottom: 1px solid #eee; /* Linha divisória entre links */
     }
 }
