@@ -196,7 +196,7 @@ p {
     
     /* ... (restante do código igual para background, padding, etc.) */
     min-height: 400px; 
-    background-image: url('img/modal-inicial.png'); 
+    background-image: url('img/modal-inicial.webp'); 
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat; 
@@ -845,7 +845,7 @@ ease;
     /* Gradiente + imagem de fundo separados por vírgula */
     background: 
       linear-gradient(to bottom, rgba(255, 0, 0, 0.2) 31%, rgba(0, 0, 0, 1) 67%),
-      url("img/back-footer.png");
+      url("img/back-footer.webp");
   
     background-repeat: no-repeat;
     background-position: calc(50% - 50%) calc(90% - 2%);
@@ -874,17 +874,23 @@ ease;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    position: relative;
   }
   
-  .footer-contacts a {
-    color: #ffd60a;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  .footer-contacts img {
+    width: 30px;
+   /* Define uma transição suave para as propriedades 'transform' */
+    transition: transform 0.3s ease-in-out; 
+    /* Garante que o elemento comece na sua posição e tamanho originais */
+    transform: translateY(0) scale(1);
+    /* (Opcional) Garante que a imagem não "salte" quando o texto ao redor se mover */
+    display: block;
   }
   
-  .footer-contacts a:hover {
-    color: #fff;
+  .footer-contacts img:hover {
+   transform: translateY(-5px) 
+               /* Aumenta o tamanho da imagem em 5% (1.05 = 105% do tamanho original) */
+               scale(1.15);
   }
   
   .footer-bottom {

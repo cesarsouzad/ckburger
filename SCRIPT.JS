@@ -306,9 +306,14 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 document.addEventListener('DOMContentLoaded', function() {
-    // ⚠️ ALTERADO: Pega o elemento pelo novo ID
+    let timerModal;
+
+        //ALTERADO: Pega o elemento pelo novo ID
     const modalContainer = document.getElementById('chamada-conteiner');
     const fecharBotao = document.querySelector('.fechar-modal');
+
+    // Define o tempo em milissegundos (7 segundos)
+    const tempoParaFechar = 7000; 
 
     // Função para mostrar o modal
     function mostrarModal() {
@@ -318,10 +323,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para esconder o modal
     function esconderModal() {
         modalContainer.style.display = 'none'; 
+        clearTimeout(timerModal);
     }
 
+    // 1. CHAMA A FUNÇÃO PARA MOSTRAR O MODAL IMEDIATAMENTE
     mostrarModal();
 
+    timerModal = setTimeout(esconderModal, tempoParaFechar);
+     
+    // 2. NOVO CÓDIGO: AGENDA O FECHAMENTO AUTOMÁTICO
+    setTimeout(esconderModal, tempoParaFechar); 
+    // ^ Chama a função esconderModal() após 7000 milissegundos (7 segundos)
+
+    // Evento de clique no botão de fechar
     fecharBotao.addEventListener('click', esconderModal);
 
     // Fechar o modal clicando fora dele
