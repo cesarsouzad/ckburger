@@ -345,3 +345,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function verificarHorarioFuncionamento() {
+    // Pega a data e hora atual do usuário
+    const agora = new Date();
+    const diaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, ... 6 = Sábado
+    const hora = agora.getHours();    // 0 a 23
+
+    const aviso = document.getElementById('tela-fechado');
+    let estaFechado = false;
+
+    // LÓGICA DE HORÁRIOS
+    
+    // Caso 1: Segunda (1) a Sexta (5)
+    if (diaSemana >= 1 && diaSemana <= 5) {
+      // Fechado da 00:00 até as 16:59 (abre as 17)
+      if (hora < 17) {
+        estaFechado = true;
+      }
+    } 
+    // Caso 2: Sábado (6) e Domingo (0)
+    else {
+      // Fechado da 00:00 até as 14:59 (abre as 15)
+      if (hora < 15) {
+        estaFechado = true;
+      }
+    }
+
+    // APLICA O BLOQUEIO SE ESTIVER FECHADO
+    if (estaFechado) {
+      // Mostra a tela de aviso
+      aviso.style.display = "flex"; 
+      // Impede a rolagem da página (scroll)
+      document.body.style.overflow = "hidden"; 
+    } else {
+      // Garante que está oculto se estiver aberto
+      aviso.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  }
+
+  // Roda a função assim que a página carrega
+  window.onload = verificarHorarioFuncionamento;
+  
+  // Opcional: Verifica a cada minuto caso a pessoa deixe a aba aberta
+  setInterval(verificarHorarioFuncionamento, 60000);
