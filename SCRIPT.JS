@@ -383,7 +383,7 @@ function verificarHorarioFuncionamento() {
       aviso.style.display = "none";
       document.body.style.overflow = "auto";
     }
-  }
+  };
 
   // Roda a função assim que a página carrega
   window.onload = verificarHorarioFuncionamento;
