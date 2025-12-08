@@ -13,26 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 <body>
-    <div id="tela-fechado" class="fechado-overlay">
-    <div class="fechado-conteudo">
-        <img src="img/logos/BURGER.webp" alt="Logo CK Burger" style="width: 120px; margin-bottom: 20px;">
-        
-        <h2>Estamos Fechados no Momento 🔥</h2>
-        <p>Mas você pode garantir seu burger! Deixe seu pedido agendado no nosso WhatsApp.</p>
-        
-        <ul class="horarios-lista">
-        <li><strong>Segunda a Sexta:</strong> Abertura às 17:00h</li>
-        <li><strong>Sábado e Domingo:</strong> Abertura às 15:00h</li>
-        </ul>
-        
-        <a href="https://wa.me/5531984833222?text=Olá! Vi no site que estão fechados, mas gostaria de deixar meu pedido agendado/consultar cardápio." target="_blank" class="btn-zap-fechado">
-        <img src="/img/logos/whatsapp-svgrepo-com.svg" alt="WhatsApp" width="24">
-        Agendar
-        </a>
-
-        <p class="aviso-retorno" style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">O site será liberado automaticamente no horário de abertura.</p>
-    </div>
-</div>
+    
 
     <header class="main-header">
         <div class="container header-content">
@@ -43,8 +24,9 @@
 
                 <ul>
                     <li class="nav-hide-mobile"><a href="#">Início</a></li>
-                    <li class="nav-show-mobile"><a href="#menu-section">Cardápio</a></li>
-                    <li class="nav-show-mobile"><a href="#offers">Promoções</a></li>
+                    <li class="nav-show-mobile"><a href="#menu-section">Artesanal</a></li>
+                    <li class="nav-show-mobile"><a href="#menu-section-tradicionais">Tradicional</a></li>
+                    <li class="nav-hide-mobile"><a href="#offers">Combos</a></li>
                     <li class="nav-hide-mobile"><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -88,7 +70,7 @@
         </section>
 
         <section class="offers-carousel" id="offers">
-            <h2>Promoções Especiais!</h2>
+            <h2>Promoções Especiais! Artesanal na BRASA🔥</h2>
             <div class="swiper-container mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide product-item" data-id="oferta-1" data-name="Combo Mega Cheddar" data-price="39.90">
@@ -126,7 +108,7 @@
             </div>
         </section>
         <section id="menu-section" class="menu-section">
-            <h2>Nosso Cardápio Principal</h2>
+            <h2>ARTESANAIS</h2>
             <div class="product-grid">
                 <div class="product-item" data-id="burger-x" data-name="Mega Cheddar" data-price="29.90">
                     <img src="img/Mega-Cheddar.webp" alt="Mega Cheddar" loading="lazy">>
@@ -211,6 +193,60 @@
                 </div>
 
             </div>
+        </section>
+        <section id="menu-section-tradicionais" class="menu-section-tradicionais">
+            <h2>
+                TRADICIONAIS
+            </h2>
+            <div class="product-grid">
+                <div class="product-item" data-id="X-TUDO2C" data-name="X-TUDO 2 CARNES" data-price="25.00">
+                    <img src="img/xtudo2.webp" alt="X-TUDO 2 CARNES" loading="lazy">>
+                    <h3>X-TUDO 2 CARNES</h3>
+                    <p>X-TUDO  com 2 carnes de 90g, ovo, presunto, mussarela, bacon, frango desfiado, catupiry, tomate, alface, milho, batata palha.</p>
+                    <span class="price">R$ 25,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-item" data-id="X-TUDO" data-name="X-TUDO" data-price="22.00">
+                    <img src="img/xtudo.webp" alt="X-TUDO" loading="lazy">>
+                    <h3>X-TUDO</h3>
+                    <p>X-TUDO carne de 90g, ovo, presunto, mussarela, bacon, frango desfiado, catupiry, tomate, alface, milho, batata palha.</p>
+                    <span class="price">R$ 22,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-item" data-id="X-FRANGO" data-name="X-FRANGO" data-price="18.00">
+                    <img src="img/xfrango.webp" alt="X-FRANGO" loading="lazy">>
+                    <h3>X-FRANGO</h3>
+                    <p>X-FRANGO carne de 56g, mussarela, frango desfiado, tomate, alface, milho, batata palha.</p>
+                    <span class="price">R$ 18,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-item" data-id="X-BACON" data-name="X-BACON" data-price="20.00">
+                    <img src="img/xbacon.webp" alt="X-BACON" loading="lazy">>
+                    <h3>X-BACON</h3>
+                    <p>X-BACON carne de 90g, presunto, mussarela, bacon, tomate, alface, milho, batata palha.</p>
+                    <span class="price">R$ 20,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-item" data-id="X-CK" data-name="X-CKBURGER" data-price="14.00">
+                    <img src="img/xck.webp" alt="X-CKBURGER" loading="lazy"><br>
+                    <h3>X-CKBURGER</h3>
+                    <p>X-CKBURGER carne de 90g, mussarela, tomate, alface, milho, batata palha.</p>
+                    <span class="price">R$ 14,00</span>
+                    <button class="add-to-cart btn btn-secondary">Adicionar</button>
+                </div>
+            </div>
+            
         </section>
     </main>
 
