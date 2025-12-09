@@ -536,33 +536,37 @@ p {
 /* Estilos de navegação (setas) */
 .swiper-button-next,
 .swiper-button-prev {
+    color: var(--text-dark);
     top: 50%;
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.8);
-    color: red;
     transition: background-color 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     background-color: rgba(255, 255, 255, 1);
+    color: var(--primary-color);
 }
 
 .swiper-button-prev {
+    
     left: 5px;
     /* Ajusta a posição da seta anterior */
 }
 
 .swiper-button-next {
+    
     right: 5px;
     /* Ajusta a posição da seta seguinte */
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
+    color: var(--background-dark);
     font-size: 1rem;
     font-weight: bold;
 }
@@ -570,6 +574,7 @@ p {
 /* Estilos da paginação (bolinhas) */
 .swiper-pagination-bullet-active {
     background-color: var(--primary-color);
+    color: var(--background-dark);
 }
 
 /* Menu Section (Product Grid) */

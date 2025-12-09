@@ -18,11 +18,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17791428874"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'AW-17791428874');
+    gtag('config', 'AW-17791428874');
 </script>
 
 <body>
@@ -45,15 +45,16 @@
                 </ul>
             </nav>
             <button id="open-cart-button" class="cart-button">
-                <span class="cart-icon-mobile"><svg class="cart-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="9" cy="20" r="2" stroke="currentColor" stroke-width="2"/>
-    <circle cx="17" cy="20" r="2" stroke="currentColor" stroke-width="2"/>
+                <span class="cart-icon-mobile"><svg class="cart-svg-icon" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="20" r="2" stroke="currentColor" stroke-width="2" />
+                        <circle cx="17" cy="20" r="2" stroke="currentColor" stroke-width="2" />
 
-    <path d="M4 4H20L18 14H6L4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <path d="M16 4L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg></span> <span class="cart-text-desktop">Carrinho</span> (<span
-                    id="cart-count">0</span>)
+                        <path d="M4 4H20L18 14H6L4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+
+                        <path d="M16 4L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg></span> <span class="cart-text-desktop">Carrinho</span> (<span id="cart-count">0</span>)
             </button>
         </div>
     </header>
@@ -104,7 +105,7 @@
                         <span class="price">R$ 39,90</span>
                         <button class="add-to-cart btn btn-secondary">Adicionar</button>
                     </div>
-                    <div class="swiper-slide product-item" data-id="oferta-2" data-name="Combo Bacon Supreme"
+                    <div class="swiper-slide product-item status-embrev" data-id="oferta-2" data-name="Combo Bacon Supreme"
                         data-price="48.00">
                         <img src="img/combo2.webp" alt="Combo Bacon Supreme" loading="lazy">>
                         <h3>Combo Bacon Supreme</h3>
@@ -137,6 +138,7 @@
         <section id="menu-section" class="menu-section">
             <h2>ARTESANAIS</h2>
             <div class="product-grid">
+                <!-- para deixar produto indisponivel remover status-embreve da class e descomentar class="status-badge" -->
                 <div class="product-item" data-id="burger-x" data-name="Mega Cheddar" data-price="29.90">
                     <img src="img/Mega-Cheddar.webp" alt="Mega Cheddar" loading="lazy">>
                     <h3>Mega Cheddar</h3>
@@ -145,7 +147,7 @@
                     <span class="price">R$ 29,90</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-
+                <!-- para deixar produto indisponivel remover status-embreve da class e descomentar class="status-badge" -->
                 <div class="product-item" data-id="burger-y" data-name="Frango Crispy" data-price="22.50">
                     <img src="img/frango-crocante.webp" alt="Frango Crispy" loading="lazy">>
                     <h3>Frango Crispy</h3>
@@ -154,7 +156,7 @@
                     <span class="price">R$ 22,50</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-
+                <!-- para deixar produto indisponivel remover status-embreve da class e descomentar class="status-badge" -->
                 <div class="product-item" data-id="burger-z" data-name="Bacon Supremo" data-price="38.00">
                     <img src="img/bacon-supreme.webp" alt="Bacon Supremo" loading="lazy">>
                     <h3>Bacon Supremo</h3>
@@ -163,23 +165,24 @@
                     <span class="price">R$ 38,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-
+                <!-- para deixar produto indisponivel remover status-embreve da class e descomentar class="status-badge" -->
                 <div class="product-item status-embreve" data-id="burger-u" data-name="Fresh Supreme"
                     data-price="26.50">
                     <img src="img/Fresh-Supreme.webp" alt="Fresh Supreme" loading="lazy">>
                     <h3>Fresh Supreme</h3>
                     <p>Hambúrguer artesanal na brasa 120g, , cheddar, cebola caramelizada, alface, cebola roxa, tomate,
                         picles.</p>
-                    <span class="status-badge">Em Breve</span>
+                    <span class="status-badge">Indisponivel no momento</span>
                     <span class="price">R$ 26,50</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-
-                <div class="product-item" data-id="burger-k" data-name="Frango Bacon Grelhado" data-price="27.50">
+                <!-- para deixar produto indisponivel remover status-embreve da class e descomentar class="status-badge" -->
+                <div class="product-item status-embrev" data-id="burger-k" data-name="Frango Bacon Grelhado" data-price="27.50">
                     <img src="img/Frango-bacon-grill.webp" alt="Frango Bacon Grelhado" loading="lazy">>
                     <h3>Frango Bacon Grelhado</h3>
                     <p>Hambúrguer artesanal de frango na brasa 120g, maionese temperada, cheddar + cheddar Extra, bacon,
                         alface, cebola roxa, .</p>
+                    <!-- <span class="status-badge">Indisponivel no momento</span> -->
                     <span class="price">R$ 27,50</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -189,6 +192,7 @@
                     <img src="img/Batata-Chips-Artesanal.webp" alt="Batata Chips Artesanal" loading="lazy">>
                     <h3>Batata Chips Artesanal</h3>
                     <p>Batata Chips Artesanal 50g.</p>
+                    <!-- <span class="status-badge">Indisponivel no momento</span> -->
                     <span class="price">R$ 6,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -197,6 +201,7 @@
                     <img src="img/coca-cola.webp" alt="Coca-Cola Lata" loading="lazy">>
                     <h3>Coca-Cola Lata</h3>
                     <p>Refrigerante Coca-Cola em lata 350ml.</p>
+                    <!-- <span class="status-badge">Indisponivel no momento</span> -->
                     <span class="price">R$ 7,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -205,15 +210,17 @@
                     <img src="img/coca-zero.webp" alt="coca-cola-zero Lata" loading="lazy">>
                     <h3>Coca-Cola-Zero Lata</h3>
                     <p>Refrigerante Coca-Cola-Zero em lata 350ml.</p>
+                    <!-- <span class="status-badge">Indisponivel no momento</span> -->
                     <span class="price">R$ 7,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
 
-                <div class="product-item" data-id="Fanta-laranja" data-name="Fanta-laranja Lata 350ml"
+                <div class="product-item status-embreve" data-id="Fanta-laranja" data-name="Fanta-laranja Lata 350ml"
                     data-price="7.00">
                     <img src="img/fanta-laranja.webp" alt="Fanta-laranja Lata" loading="lazy">>
                     <h3>Fanta Laranja Lata</h3>
                     <p>Refrigerante Fanta laranja em lata 350ml.</p>
+                    <span class="status-badge">Indisponivel no momento</span>
                     <span class="price">R$ 7,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -223,6 +230,7 @@
                     <img src="img/guarana-antarctica.webp" alt="Guarana-Antarctica Lata" loading="lazy">>
                     <h3>Guaraná Antartica Lata</h3>
                     <p>Refrigerante Guaraná Antarctica em lata 350ml.</p>
+                    <!-- <span class="status-badge">Indisponivel no momento</span> -->
                     <span class="price">R$ 7,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
