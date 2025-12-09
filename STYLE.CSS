@@ -1,8 +1,11 @@
 /* Variáveis de Cores */
 :root {
-    --primary-color: #FF7F00; /* Laranja da logo */
-    --secondary-color: #333333; /* Preto mais suave */
-    --background-dark: #222222; /* Fundo escuro */
+    --primary-color: #FF7F00;
+    /* Laranja da logo */
+    --secondary-color: #333333;
+    /* Preto mais suave */
+    --background-dark: #222222;
+    /* Fundo escuro */
     --text-light: #FFFFFF;
     --text-dark: #1a1a1a;
     --gray-light: #f5f5f5;
@@ -21,7 +24,8 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--gray-light);
-    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+    overflow-x: hidden;
+    /* Evita scroll horizontal indesejado */
 }
 
 .container {
@@ -31,7 +35,9 @@ body {
 }
 
 /* Tipografia */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Oswald', sans-serif;
     color: var(--text-dark);
     margin-bottom: 15px;
@@ -39,7 +45,8 @@ h1, h2, h3 {
 
 h1 {
     font-size: 3.5em;
-    color: var(--text-light); /* No hero, é claro */
+    color: var(--text-light);
+    /* No hero, é claro */
 }
 
 h2 {
@@ -79,7 +86,8 @@ p {
 }
 
 .btn-primary:hover {
-    background-color: #e67300; /* Laranja um pouco mais escuro */
+    background-color: #e67300;
+    /* Laranja um pouco mais escuro */
     box-shadow: 1px 1px 15px rgb(255, 74, 74);
 }
 
@@ -105,7 +113,7 @@ p {
     color: var(--text-light);
     padding: 5px 0;
     box-shadow: 0 4px 14px 7px rgba(0, 0, 0, 0.4);
-     position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -119,7 +127,8 @@ p {
 }
 
 .logo {
-    height: 90px; /* Ajuste conforme o tamanho da sua logo */
+    height: 90px;
+    /* Ajuste conforme o tamanho da sua logo */
 }
 
 .main-nav ul {
@@ -142,6 +151,40 @@ p {
     color: var(--primary-color);
 }
 
+/* Configuração do Menu Hamburguer (Base) */
+.menu-toggle {
+    display: none;
+    /* Escondido por padrão no Desktop */
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 2.2em;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10px;
+    line-height: 1;
+    z-index: 1001;
+}
+
+/* Configuração do Carrinho Mobile (Base) */
+/* Esconde o ícone no Desktop */
+.cart-icon-mobile {
+    display: none;
+    font-size: 1.2em;
+}
+
+/* Mostra o texto no Desktop */
+.cart-text-desktop {
+    display: inline;
+}
+
+/* Estilo para a navegação deslizar para fora da tela */
+.main-nav {
+    /* ... (Mantenha os estilos existentes para Desktop) ... */
+    transition: left 0.3s ease-in-out;
+    /* Adicione a transição para o slide */
+}
+
 .cart-button {
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -162,32 +205,38 @@ p {
 
 /* O Fundo que cobre a tela inteira */
 .fechado-overlay {
-  display: none; /* Começa invisível, o JS que vai ativar */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95); /* Fundo preto quase sólido */
-  z-index: 9999; /* Fica acima de TUDO */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  backdrop-filter: blur(5px); /* Desfoca o site atrás (efeito moderno) */
+    display: none;
+    /* Começa invisível, o JS que vai ativar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    /* Fundo preto quase sólido */
+    z-index: 9999;
+    /* Fica acima de TUDO */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    backdrop-filter: blur(5px);
+    /* Desfoca o site atrás (efeito moderno) */
 }
 
 /* A caixinha do texto */
 .fechado-conteudo {
-  background: #1a1a1a;
-  padding: 40px;
-  border: 2px solid var(--primary-color); /* Borda vermelha temática */
-  border-radius: 15px;
-  max-width: 90%;
-  width: 400px;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    background: #1a1a1a;
+    padding: 40px;
+    border: 2px solid var(--primary-color);
+    /* Borda vermelha temática */
+    border-radius: 15px;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
 }
-.fechado-conteudo a{
+
+.fechado-conteudo a {
     color: var(--gray-light);
     font-style: normal;
     text-decoration: none;
@@ -200,7 +249,8 @@ p {
     text-indent: 9px;
     transition: 0.7s ease-in-out;
 }
-.fechado-conteudo a:hover{
+
+.fechado-conteudo a:hover {
     color: #3ec050;
     background-color: var(--gray-light);
     box-shadow: 0px 0px 5px 3px #3ec050;
@@ -208,23 +258,24 @@ p {
 }
 
 .fechado-conteudo h2 {
-  color: #ffcc00; /* Amarelo ou vermelho do seu tema */
-  margin-bottom: 15px;
-  font-size: 1.5rem;
+    color: #ffcc00;
+    /* Amarelo ou vermelho do seu tema */
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
 .horarios-lista {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  text-align: left;
-  font-size: 1.1rem;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.1rem;
 }
 
 .horarios-lista li {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -237,17 +288,20 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     /* FUNDO ESCURO (OVERLAY) - RESOLVENDO SEU ERRO */
-    background-color: rgba(0, 0, 0, 0.8); 
-    
+    background-color: rgba(0, 0, 0, 0.8);
+
     /* Garante que fique acima do conteúdo da página */
-    z-index: 1100; /* Um z-index alto, mas menor que o do modal */
-    
+    z-index: 1100;
+    /* Um z-index alto, mas menor que o do modal */
+
     /* ESTA PARTE É CRUCIAL PARA CENTRALIZAR O MODAL FILHO */
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -257,25 +311,26 @@ p {
     /* CORREÇÃO 1: REMOVER O POSICIONAMENTO FIXO AQUI */
     /* Remove 'position: fixed', 'top: 100px', 'left: 25%' e 'align-self: center' */
     /* A centralização será feita pelo container (display: flex) */
-    position: relative; /* Usamos 'relative' para o botão de fechar funcionar */
-    
+    position: relative;
+    /* Usamos 'relative' para o botão de fechar funcionar */
+
     /* Largura específica que você pediu (50% da largura do container, que aqui será a largura máxima) */
-    width: 100%; 
-    max-width: 600px; 
-    
+    width: 100%;
+    max-width: 600px;
+
     /* ... (restante do código igual para background, padding, etc.) */
-    min-height: 400px; 
-    background-image: url('img/modal-inicial.webp'); 
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat; 
-    background-color: white; 
+    min-height: 400px;
+    background-image: url('img/modal-inicial.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
     text-align: center;
-    
+
     /* Garante que o modal fique acima do overlay */
-    z-index: 1200; 
+    z-index: 1200;
 
     /* Mantém a lógica de layout para os botões no final */
     display: flex;
@@ -291,41 +346,50 @@ p {
     bottom: -15%;
     display: flex;
     justify-content: space-around;
-    border-radius: 0 0 12px 12px; /* Opcional: arredonda só os cantos inferiores */
+    border-radius: 0 0 12px 12px;
+    /* Opcional: arredonda só os cantos inferiores */
     width: 80%;
 }
-.modal-botoes a{
+
+.modal-botoes a {
     box-shadow: 0px 0px 15px 7px var(--primary-color);
     width: 52px;
     height: 52px;
-    border-radius: 15px; 
+    border-radius: 15px;
     transition: 1s;
 }
-.modal-inicial a:hover{
+
+.modal-inicial a:hover {
     box-shadow: 0px 0px 15px 7px var(--gray-light);
     transform: scale(1.2);
 }
+
 .fechar-modal {
     /* 1. POSICIONAMENTO ABSOLUTO */
-    position: absolute; 
-    
+    position: absolute;
+
     /* 2. DEFINIÇÃO DA POSIÇÃO (CANTO SUPERIOR DIREITO) */
-    top: 10px;    /* Distância do topo do modal */
-    right: 15px;  /* Distância da lateral direita do modal */
+    top: 10px;
+    /* Distância do topo do modal */
+    right: 15px;
+    /* Distância da lateral direita do modal */
 
     /* 3. GARANTIA DE VISIBILIDADE E INTERAÇÃO */
     background: var(--gray-light);
     border: 2px solid var(--primary-color);
     border-radius: 5px;
     font-size: 28px;
-    color: var(--text-dark); /* Use uma cor que se destaque no seu background, talvez preto/cinza */
+    color: var(--text-dark);
+    /* Use uma cor que se destaque no seu background, talvez preto/cinza */
     /* Caso a imagem de fundo tenha área clara, use '#333'. Se a área for escura, use 'white'. */
     padding: 0px 5px;
     cursor: pointer;
     line-height: 1;
-    z-index: 1210; /* Deve ser maior que o modal (1200) para garantir que seja clicável */
+    z-index: 1210;
+    /* Deve ser maior que o modal (1200) para garantir que seja clicável */
     font-weight: bold;
 }
+
 /* ... */
 
 /* Hero Section */
@@ -346,39 +410,46 @@ p {
     gap: 40px; */
     margin-top: 105px;
     position: relative;
-  height: 65vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  overflow: hidden;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
 }
+
 .hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* fica atrás do texto */
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* fica atrás do texto */
+    overflow: hidden;
 }
 
 .video-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* cobre toda a área sem distorcer */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* cobre toda a área sem distorcer */
 }
+
 /* Estilo base para os títulos */
 #tituloDinamico {
     height: 200px;
     width: 100%;
-  opacity: 0; /* Começa transparente */
-  transition: opacity 2s ease-in-out; /* Define a transição de 2 segundos */
+    opacity: 0;
+    /* Começa transparente */
+    transition: opacity 2s ease-in-out;
+    /* Define a transição de 2 segundos */
 }
 
 /* Classe que será adicionada pelo JS para ativar a animação */
 .fade-in {
-  opacity: 1 !important; /* Muda a opacidade para 1 (totalmente visível) */
+    opacity: 1 !important;
+    /* Muda a opacidade para 1 (totalmente visível) */
 }
 
 .hero-text {
@@ -397,6 +468,7 @@ p {
     font-size: 1.3em;
     margin-bottom: 30px;
 }
+
 /* 
 .hero-image {
     flex: 1;
@@ -412,11 +484,11 @@ p {
 } */
 
 
- /*ofrtas*/
-    /* Estilo do Carrossel */
+/*ofrtas*/
+/* Estilo do Carrossel */
 .offers-carousel {
     margin-top: 60px;
-    padding: 6px 0px 40px 0px;
+    padding: 65px 0px 40px 0px;
     background-color: var(--primary-color);
     overflow: hidden;
     border-radius: 30px;
@@ -427,11 +499,14 @@ p {
     width: 100%;
     height: auto;
 }
+
 .offers-carousel .swiper-container {
-    position: relative; /* Isso define o ponto de referência para as setas */
+    position: relative;
+    /* Isso define o ponto de referência para as setas */
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px; /* Adiciona um padding para as setas não colarem nas bordas */
+    padding: 0 40px;
+    /* Adiciona um padding para as setas não colarem nas bordas */
 }
 
 .swiper-slide {
@@ -470,16 +545,20 @@ p {
     color: red;
     transition: background-color 0.3s ease;
 }
+
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     background-color: rgba(255, 255, 255, 1);
 }
+
 .swiper-button-prev {
-    left: 5px; /* Ajusta a posição da seta anterior */
+    left: 5px;
+    /* Ajusta a posição da seta anterior */
 }
 
 .swiper-button-next {
-    right: 5px; /* Ajusta a posição da seta seguinte */
+    right: 5px;
+    /* Ajusta a posição da seta seguinte */
 }
 
 .swiper-button-next::after,
@@ -497,9 +576,11 @@ p {
 .menu-section {
     padding: 60px 0;
 }
+
 .menu-section-tradicionais {
-    padding: 0px 0;
+    padding: 30px 0;
 }
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -526,7 +607,7 @@ p {
     object-fit: cover;
     display: block;
     margin-bottom: 15px;
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 .product-item h3 {
@@ -539,8 +620,10 @@ p {
     font-size: 0.9em;
     color: #666;
     margin: 0 15px 15px;
-    min-height: 40px; /* Isso garante que todos os parágrafos tenham a mesma altura */
-    display: flex; /* Para centralizar o texto verticalmente se houver apenas uma linha */
+    min-height: 40px;
+    /* Isso garante que todos os parágrafos tenham a mesma altura */
+    display: flex;
+    /* Para centralizar o texto verticalmente se houver apenas uma linha */
     align-items: center;
     justify-content: center;
 }
@@ -552,17 +635,20 @@ p {
     display: block;
     margin-bottom: 20px;
 }
+
 /*INDISPINIBILIDADE DE PRODUTOS*/
 .status-embreve {
     /* Deixa o card um pouco mais apagado */
-    opacity: 0.6; 
+    opacity: 0.6;
     /* Garante que não seja clicável acidentalmente */
     pointer-events: none;
 }
-.status-embreve img{
+
+.status-embreve img {
     filter: grayscale(80%);
     transition: filter 0.3S ease;
 }
+
 .status-badge {
     display: block;
     margin-top: 10px;
@@ -570,11 +656,13 @@ p {
     font-size: 1.1em;
     font-weight: bold;
     color: white;
-    background-color: #ff9800; /* Cor Laranja/Aviso */
+    background-color: #ff9800;
+    /* Cor Laranja/Aviso */
     border-radius: 4px;
     /* Substitui o espaço que o botão de adicionar ocuparia */
-    width: 100%; 
+    width: 100%;
 }
+
 /*------------------------------------------------*/
 
 /* Cart Sidebar */
@@ -587,7 +675,8 @@ p {
     background-color: var(--background-dark);
     color: var(--text-light);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    transform: translateX(100%); /* Esconde inicialmente */
+    transform: translateX(100%);
+    /* Esconde inicialmente */
     transition: transform 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -600,7 +689,8 @@ p {
 }
 
 #cart-sidebar:not(.cart-hidden) {
-    transform: translateX(0); /* Mostra */
+    transform: translateX(0);
+    /* Mostra */
 }
 
 .cart-header {
@@ -633,51 +723,59 @@ p {
 }
 
 .cart-items-list {
-    flex-grow: 1; /* Permite que ocupe o espaço disponível */
-    overflow-y: auto; /* Adiciona scroll se houver muitos itens */
+    flex-grow: 1;
+    /* Permite que ocupe o espaço disponível */
+    overflow-y: auto;
+    /* Adiciona scroll se houver muitos itens */
     margin-bottom: 20px;
 }
 
 .cart-item {
-  display: flex;
-  flex-direction: column;
-  background: #2a2a2a;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
+
 .cart-item-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
 }
+
 .cart-quantity {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
+
 .cart-quantity button {
-  background: #e63946;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  width: 28px;
-  height: 28px;
-  cursor: pointer;
-  transition: 0.2s;
+    background: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: 0.2s;
 }
+
 .cart-quantity button:hover {
-  background: #ff4757;
+    background: #ff4757;
 }
+
 .cart-item span:first-child {
     flex-grow: 1;
     margin-right: 10px;
 }
 
 .cart-item button {
-    background-color: #dc3545; /* Vermelho para remover */
+    background-color: #dc3545;
+    /* Vermelho para remover */
     color: var(--text-light);
     border: none;
     padding: 5px 10px;
@@ -694,7 +792,8 @@ p {
 .cart-summary {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
-    margin-top: auto; /* Empurra para o final da sidebar */
+    margin-top: auto;
+    /* Empurra para o final da sidebar */
 }
 
 .cart-summary p {
@@ -724,69 +823,70 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     /* Centraliza o conteúdo (modal-content) no meio da tela */
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    
+
     /* Garante que fique acima de todos os outros elementos */
-    z-index: 9999; 
-    
+    z-index: 9999;
+
     /* Fundo semi-transparente (opcional) */
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .cart-item-price {
-  font-size: 14px;
-  color: #aaa;
-  margin-left: 10px;
-  white-space: nowrap;
+    font-size: 14px;
+    color: #aaa;
+    margin-left: 10px;
+    white-space: nowrap;
 }
 
 .cart-item-price small {
-  display: block;
-  font-size: 12px;
-  color: #aaa;
+    display: block;
+    font-size: 12px;
+    color: #aaa;
 }
+
 .quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .quantity-controls button {
-  background: #e63946;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  width: 28px;
-  height: 28px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.2s;
+    background: #e63946;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .quantity-controls button:hover {
-  background: #ff4757;
+    background: #ff4757;
 }
 
 .unit-price {
-  margin-left: 8px;
-  color: #bbb;
-  font-size: 14px;
+    margin-left: 8px;
+    color: #bbb;
+    font-size: 14px;
 }
 
 .cart-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cart-item-total {
-  margin-top: 5px;
-  color: #fff;
-  font-weight: bold;
+    margin-top: 5px;
+    color: #fff;
+    font-weight: bold;
 }
 
 
@@ -803,10 +903,12 @@ p {
     padding: 30px;
     border-radius: 8px;
     width: 90%;
-    max-width: 450px; /* Limita a largura para mobile e desktop */
-    position: relative; 
+    max-width: 450px;
+    /* Limita a largura para mobile e desktop */
+    position: relative;
 }
-.modal-content h2{
+
+.modal-content h2 {
     color: var(--text-light);
     text-shadow: 0px 0px 5px black;
 }
@@ -822,7 +924,8 @@ p {
     cursor: pointer;
     transition: 1s;
 }
-.close-btn-modal:hover{
+
+.close-btn-modal:hover {
     color: red;
 }
 
@@ -835,33 +938,37 @@ p {
     border-radius: 4px;
     box-sizing: border-box;
 }
-#formularioCliente label{
+
+#formularioCliente label {
     text-shadow: 0px 0px 5px black;
 }
+
 /* Botão flutuante "voltar ao topo" */
 #btnTopo {
-  position: fixed;
-  bottom: 40px; /* ajuste se tiver botão de WhatsApp */
-  right: 15px;
-  background-color: #ff800063; /* cor de destaque da CK Burger */
-  color: #000814;
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  rotate: 270deg;
-  font-size: 25px;
-  cursor: pointer;
-  display: none; /* começa invisível */
-  box-shadow: -8px 2px 10px rgba(0, 0, 0, 0.73);
-    transition: opacity 0.3s 
-ease;
+    position: fixed;
+    bottom: 40px;
+    /* ajuste se tiver botão de WhatsApp */
+    right: 15px;
+    background-color: #ff800063;
+    /* cor de destaque da CK Burger */
+    color: #000814;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    rotate: 270deg;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+    /* começa invisível */
+    box-shadow: -8px 2px 10px rgba(0, 0, 0, 0.73);
+    transition: opacity 0.3s ease;
     z-index: 9999;
     text-box: auto;
 }
 
 #btnTopo:hover {
-  background-color: #FF7F00;
+    background-color: #FF7F00;
 }
 
 
@@ -884,7 +991,7 @@ ease;
     color: #000;
     padding: 20px 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     text-align: center;
     max-width: 300px;
 }
@@ -910,145 +1017,235 @@ ease;
 
 
 .footer {
-  position: relative; /* Cria o contexto para posicionar o vídeo */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden; /* Garante que o vídeo não ultrapasse as bordas */
-  /* Sua cor de texto original */
-  color: #fff; 
-  text-align: center;
+    position: relative;
+    /* Cria o contexto para posicionar o vídeo */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Garante que o vídeo não ultrapasse as bordas */
+    /* Sua cor de texto original */
+    color: #fff;
+    text-align: center;
 }
- /* 1. Estilo do Vídeo (Camada 0) */
+
+/* 1. Estilo do Vídeo (Camada 0) */
 .bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Faz o vídeo preencher tudo sem distorcer */
-  z-index: 0;
-  object-position: center 120%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz o vídeo preencher tudo sem distorcer */
+    z-index: 0;
+    object-position: center 120%;
 }
+
 /* 2. Estilo do Gradiente (Camada 1) */
 .bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* O gradiente que você pediu */
-  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.2) 31%, rgba(0, 0, 0, 1) 67%);
-  z-index: 1; /* Fica em cima do vídeo */
-} 
- /* 3. Estilo do Conteúdo (Camada 2) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* O gradiente que você pediu */
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.2) 31%, rgba(0, 0, 0, 1) 67%);
+    z-index: 1;
+    /* Fica em cima do vídeo */
+}
+
+/* 3. Estilo do Conteúdo (Camada 2) */
 .footer-content-wrapper {
-  position: relative;
-  z-index: 2; /* Fica em cima de TUDO (vídeo + gradiente) */
-  padding: 20px; /* Espaçamento interno para o conteúdo não colar na borda */
+    position: relative;
+    z-index: 2;
+    /* Fica em cima de TUDO (vídeo + gradiente) */
+    padding: 20px;
+    /* Espaçamento interno para o conteúdo não colar na borda */
 }
 
 /* Ajustes opcionais para manter seu layout bonito */
-.footer-container, .footer-bottom {
-  position: relative; 
-  /* Garante que elementos internos respeitem o z-index do wrapper */
-} 
-  .footer-container {
+.footer-container,
+.footer-bottom {
+    position: relative;
+    /* Garante que elementos internos respeitem o z-index do wrapper */
+}
+
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .footer-logo img{
+}
+
+.footer-logo img {
     width: 20%;
 
-  }
-  
-  .footer-contacts {
+}
+
+.footer-contacts {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     position: relative;
-  }
-  
-  .footer-contacts img {
+}
+
+.footer-contacts img {
     width: 30px;
-   /* Define uma transição suave para as propriedades 'transform' */
-    transition: transform 0.3s ease-in-out; 
+    /* Define uma transição suave para as propriedades 'transform' */
+    transition: transform 0.3s ease-in-out;
     /* Garante que o elemento comece na sua posição e tamanho originais */
     transform: translateY(0) scale(1);
     /* (Opcional) Garante que a imagem não "salte" quando o texto ao redor se mover */
     display: block;
-  }
-  
-  .footer-contacts img:hover {
-   transform: translateY(-5px) 
-               /* Aumenta o tamanho da imagem em 5% (1.05 = 105% do tamanho original) */
-               scale(1.15);
-  }
-  
-  .footer-bottom {
+}
+
+.footer-contacts img:hover {
+    transform: translateY(-5px)
+        /* Aumenta o tamanho da imagem em 5% (1.05 = 105% do tamanho original) */
+        scale(1.15);
+}
+
+.footer-bottom {
     margin-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 10px;
     font-size: 0.9rem;
     color: #aaa;
-  }
-  .footer-bottom p {
+}
+
+.footer-bottom p {
     margin-bottom: 0px;
-  }
-  
-/* Media Queries for Responsiveness */
+}
+
+/* Estilo para o ícone SVG dentro do botão do carrinho */
+.cart-svg-icon {
+    width: 25px;
+    /* Define a largura do ícone */
+    height: 25px;
+    /* Define a altura do ícone */
+}
+
+/* Usamos 'currentColor' no SVG, então a cor será controlada pelo seu CSS */
+.cart-button {
+    color: var(--secondary-color);
+    /* A cor padrão é laranja */
+}
+
+/* Quando o botão é hover, a cor do ícone também muda */
+.cart-button:hover {
+    color: var(--text-light);
+    /* Muda para branco no hover (se o background do botão for preenchido) */
+}
+
 @media (max-width: 900px) {
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 60px 0;
-    }
-
-    .hero-text, .hero-image {
-        max-width: 80%;
-    }
-
-    .hero-image {
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    .hero-text h1 {
-        font-size: 2.8em;
-    }
-
-    .main-nav ul .nav-hide-mobile {
-        display: none;
-    }
-
-    .main-nav ul {
-        /* Garante que o container de links seja exibido */
-        display: flex; 
-        /* Centraliza os links restantes (Cardápio e Ofertas) */
-        justify-content: center;
-        /* Remove a margem lateral desnecessária no mobile */
-        padding: 0; 
-        width: auto;
-    }
-    /* Ajusta o espaçamento dos links restantes */
-    .main-nav ul li {
-        margin-left: 15px; /* Reduz o espaço entre os links */
-        margin-right: 15px;
-    }
+    /* --- NAVEGAÇÃO / HEADER (MOBILE) --- */
 
     .header-content {
+        /* Garante espaço entre os elementos: Logo | Hamburguer | Carrinho */
         justify-content: space-between;
+        padding: 0 10px;
     }
+
+    /* 1. MOSTRA O BOTÃO HAMBURGUER */
+    .menu-toggle {
+        display: block;
+        order: 2;
+        /* Coloca o hamburguer no meio (Logo, Hamburguer, Carrinho) */
+    }
+
+    /* 2. ESCONDE O MENU DE NAVEGAÇÃO PRINCIPAL */
+    .main-nav {
+        position: absolute;
+        /* Mudança: Use 'absolute' para ficar abaixo do header fixo */
+        top: 60px;
+        /* Alinha o menu logo abaixo da altura do seu header/logo (ajuste conforme a altura final do seu .main-header) */
+        left: 7%;
+        /* Alinha à esquerda */
+        width: 100%;
+        /* Ocupa a largura total */
+        height: auto;
+        /* A altura será baseada no conteúdo */
+        max-height: 0;
+        /* NOVO: Esconde o menu ao definir a altura máxima como zero */
+        overflow: hidden;
+        /* Garante que o conteúdo não seja visível */
+        background-color: var(--background-dark);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        transition: max-height 0.3s ease-in-out;
+        /* NOVO: Transição na altura, para o efeito de abrir/fechar */
+        z-index: 900;
+        padding-top: 0;
+        /* Remove o padding superior desnecessário */
+        /* Remova display: block; ou flex-direction: column; se estiverem aqui, 
+       pois já estão definidos na ul/li ou serão herdados. */
+    }
+
+    /* Classe JS para mostrar o menu - Agora faz o menu 'crescer' */
+    .main-nav.active {
+        max-height: 300px;
+        /* Valor alto o suficiente para caber todos os links (ou use um valor maior como 500px se precisar) */
+        /* REMOVA left: 0; - não é mais necessário */
+    }
+
+    /* Estiliza os links na vertical */
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 30px;
+        /* Adiciona padding interno */
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+        /* Ajusta a margem vertical entre os links */
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        padding: 10px 0;
+        font-size: 1.1em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+        /* Garante que o link ocupe toda a largura do li */
+    }
+
+    /* 3. AJUSTE DO BOTÃO DO CARRINHO (ÍCONE + CONTADOR) */
+    .cart-button {
+        background-color: var(--primary-color);
+        /* Remove o fundo no mobile */
+        border: 2px solid var(--primary-color);
+        padding: 8px 10px;
+        order: 3;
+        /* Coloca o carrinho no final */
+        font-size: 0.9em;
+    }
+
+    .cart-button:hover {
+        background-color: var(--gray-light-color);
+    }
+
+    .cart-text-desktop {
+        display: none;
+        /* Esconde o texto "Carrinho" */
+    }
+
+    .cart-icon-mobile {
+        display: inline-block;
+        /* Mostra o ícone 🛒 */
+        margin-right: 5px;
+    }
+
+    /* ... Mantenha as outras regras de 900px que você já tinha ... */
 }
 
 @media (max-width: 600px) {
     .container {
         padding: 0 5px;
     }
-    .hero-section{
+
+    .hero-section {
         margin-top: 16px;
     }
 
@@ -1061,65 +1258,47 @@ ease;
     }
 
     .product-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        grid-template-columns: 1fr;
     }
 
     #cart-sidebar {
-        width: 100%; /* Ocupa toda a largura em mobile */
+        width: 100%;
+        /* Ocupa toda a largura em mobile */
     }
-    #tituloDinamico{
-        height: 100px;
-        margin-top: 10%;
-        padding-top: 50px;
-    }
-    .hero-text p{
-        margin-top: 200px;
-    }
-    .hero-text, .hero-image {
-        max-width: 100%;
-    }
+
+    /* Removido o ajuste de .main-nav que estava quebrando o slide-out */
+    /* Os estilos de slide-out definidos no 900px já são suficientes e estão corretos:
+       .main-nav { left: -100%; ... }
+       .main-nav.active { left: 0; ... } 
+    */
 
     .logo {
         height: 40px;
     }
-    .footer
-    {
-        max-width: 100%;
-    }
+
+    /* Para garantir que o menu ocupe mais espaço na tela (opcional) */
     .main-nav {
-        display: flex; /* Ou block, se o seu nav se torna vertical em mobile */
-        flex-direction: column; /* Se os itens do menu se empilham */
-        width:55%;
-        padding: 10px; /* Ajuste o padding para telas pequenas */
-        position: relative; /* Ou 'fixed' se você quiser ele sempre visível no topo */
-        top: 0;
-        left: 0;
-        /* Se ele era 'display: none' em telas grandes, este 'display: flex' o mostra */
-    }
-    .main-nav .nav-links {
-        display: flex; /* Mostra os links */
-        flex-direction: column; /* Empilha os links */
-        width: 100%;
-        margin-top: 10px;
+        width: 85%;
+        /* Ajusta a largura do menu deslizante em telas muito pequenas */
     }
 
-    .main-nav .nav-links a {
-        padding: 8px 0;
-        text-align: center;
-        border-bottom: 1px solid #eee; /* Linha divisória entre links */
+    /* Se você tiver links dentro de uma div .nav-links dentro do .main-nav ul, 
+       esta regra não deve ser necessária no seu novo HTML refatorado, 
+       mas se for, apenas garante que os links fiquem em coluna. */
+    .main-nav ul {
+        flex-direction: column;
     }
-    .swiper-button-next, .swiper-button-prev {
-    svg {
-        
-        color: RED;
-    }
-}
-    .menu-section-tradicionais .product-grid{
+
+    /* Outros ajustes de mobile */
+    .menu-section-tradicionais .product-grid {
         margin-bottom: 30px;
     }
-    .menu-section-tradicionais{
-            padding: 36px 0;
+
+    .menu-section-tradicionais {
+        padding: 36px 0;
         background: #CCCCCC;
-    background: linear-gradient(180deg, rgba(204, 204, 204, 0.1) 0%, rgba(250, 170, 70, 0.48) 8%, rgba(255, 140, 0, 0.5) 88%, rgba(204, 204, 204, 10.1) 100%);
+        background: linear-gradient(180deg, rgba(204, 204, 204, 0.1) 0%, rgba(250, 170, 70, 0.48) 8%, rgba(255, 140, 0, 0.5) 88%, rgba(204, 204, 204, 10.1) 100%);
     }
+
+    /* ... (Mantenha o restante das suas regras de 600px) ... */
 }

@@ -305,6 +305,31 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
+
+// Variáveis do Menu Hamburguer
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mainMenu = document.querySelector('.main-nav');
+const headerContent = document.querySelector('.header-content'); // Opcional, para ajustes futuros
+
+// Função para alternar a exibição do menu
+function toggleMenu() {
+    mainMenu.classList.toggle('active');
+    // Adiciona/Remove classe para desabilitar o scroll do body quando o menu estiver aberto (opcional)
+    document.body.classList.toggle('menu-open', mainMenu.classList.contains('active'));
+}
+
+// Evento de clique para abrir/fechar o menu
+mobileMenuToggle.addEventListener('click', toggleMenu);
+
+// Fechar o menu ao clicar em um link (navegação)
+mainMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (mainMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     let timerModal;
 

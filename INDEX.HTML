@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,51 +10,64 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
+
 <body>
-    
+
 
     <header class="main-header">
         <div class="container header-content">
             <a href="INDEX.HTML">
                 <img src="img/logos/BURGER.webp" alt="CK Burger Logo" class="logo">
-            </a>    
+            </a>
+            <button id="mobile-menu-toggle" class="menu-toggle">
+                &#9776; </button>
             <nav class="main-nav">
-
                 <ul>
-                    <li class="nav-hide-mobile"><a href="#">Início</a></li>
-                    <li class="nav-show-mobile"><a href="#menu-section">Artesanal</a></li>
-                    <li class="nav-show-mobile"><a href="#menu-section-tradicionais">Tradicional</a></li>
-                    <li class="nav-hide-mobile"><a href="#offers">Combos</a></li>
-                    <li class="nav-hide-mobile"><a href="#contato">Contato</a></li>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#menu-section">Artesanal</a></li>
+                    <li><a href="#menu-section-tradicionais">Tradicional</a></li>
+                    <li><a href="#offers">Combos</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
             <button id="open-cart-button" class="cart-button">
-                Carrinho (<span id="cart-count">0</span>)
+                <span class="cart-icon-mobile"><svg class="cart-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="9" cy="20" r="2" stroke="currentColor" stroke-width="2"/>
+    <circle cx="17" cy="20" r="2" stroke="currentColor" stroke-width="2"/>
+
+    <path d="M4 4H20L18 14H6L4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <path d="M16 4L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg></span> <span class="cart-text-desktop">Carrinho</span> (<span
+                    id="cart-count">0</span>)
             </button>
         </div>
     </header>
 
-<div id="chamada-conteiner" class="modal-inicial-container">
-    <div class="modal-inicial">
-        
-        <div class="modal-botoes">
-            <a href="https://www.ifood.com.br/delivery/belo-horizonte-mg/ckburger-grill-ermelinda/44953a47-ed32-437e-963e-ad30a7b2760c" target="_blank" class="btn-ifood">
-                <img src="img/logos/ifood.png" alt="Logo iFood">
-                
-            </a>
+    <div id="chamada-conteiner" class="modal-inicial-container">
+        <div class="modal-inicial">
 
-            <a href="https://oia.99app.com/dlp9/dUd7Ub?area=BR" target="_blank" class="btn-99food">
-                <img src="img/logos/99food.png" alt="Logo 99Food" style="border-radius: 12px;">
-                
-            </a>
+            <div class="modal-botoes">
+                <a href="https://www.ifood.com.br/delivery/belo-horizonte-mg/ckburger-grill-ermelinda/44953a47-ed32-437e-963e-ad30a7b2760c"
+                    target="_blank" class="btn-ifood">
+                    <img src="img/logos/ifood.png" alt="Logo iFood">
+
+                </a>
+
+                <a href="https://oia.99app.com/dlp9/dUd7Ub?area=BR" target="_blank" class="btn-99food">
+                    <img src="img/logos/99food.png" alt="Logo 99Food" style="border-radius: 12px;">
+
+                </a>
+            </div>
+
+            <button class="fechar-modal">&times;</button>
         </div>
-        
-        <button class="fechar-modal">&times;</button>
     </div>
-</div>
 
     <main class="container">
         <section class="hero-section">
@@ -66,42 +80,46 @@
                 <video autoplay muted loop playsinline class="video-bg">
                     <source src="img/banner-video.mp4" type="video/mp4">
                 </video>
-  </div>
+            </div>
         </section>
 
         <section class="offers-carousel" id="offers">
             <h2>Promoções Especiais! Artesanal na BRASA🔥</h2>
             <div class="swiper-container mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide product-item" data-id="oferta-1" data-name="Combo Mega Cheddar" data-price="39.90">
+                    <div class="swiper-slide product-item" data-id="oferta-1" data-name="Combo Mega Cheddar"
+                        data-price="39.90">
                         <img src="img/combo1.webp" alt="Combo Mega Cheddar" loading="lazy">>
                         <h3>Combo Mega Cheddar</h3>
                         <p> Mega Cheddar + Batata Média + Coca-Cola Lata.</p>
                         <span class="price">R$ 39,90</span>
                         <button class="add-to-cart btn btn-secondary">Adicionar</button>
                     </div>
-                    <div class="swiper-slide product-item" data-id="oferta-2" data-name="Combo Bacon Supreme" data-price="48.00">
+                    <div class="swiper-slide product-item" data-id="oferta-2" data-name="Combo Bacon Supreme"
+                        data-price="48.00">
                         <img src="img/combo2.webp" alt="Combo Bacon Supreme" loading="lazy">>
                         <h3>Combo Bacon Supreme</h3>
                         <p>Bacon Supreme + Batata Média + Coca-Cola Lata.</p>
                         <span class="price">R$ 48,00</span>
                         <button class="add-to-cart btn btn-secondary">Adicionar</button>
                     </div>
-                    <div class="swiper-slide product-item" data-id="oferta-3" data-name="Combo Frango Crocante" data-price="35.90">
+                    <div class="swiper-slide product-item" data-id="oferta-3" data-name="Combo Frango Crocante"
+                        data-price="35.90">
                         <img src="img/combo3.webp" alt="Combo Frango Crocante" loading="lazy">>
                         <h3>Combo Frango Crocante</h3>
                         <p>Frango Crocante + Batata Média + Coca-Cola Lata.</p>
                         <span class="price">R$ 35,90</span>
                         <button class="add-to-cart btn btn-secondary">Adicionar</button>
                     </div>
-                    <div class="swiper-slide product-item" data-id="oferta-4" data-name="Combo Frango Grelhado" data-price="37.90">
+                    <div class="swiper-slide product-item" data-id="oferta-4" data-name="Combo Frango Grelhado"
+                        data-price="37.90">
                         <img src="img/combo4.webp" alt="Combo Frango Grelhado" loading="lazy">>
                         <h3>Combo Frango Grelhado</h3>
                         <p>Frango Grelhado e Bacon + Batata Média + Coca-Cola Lata.</p>
                         <span class="price">R$ 37,90</span>
                         <button class="add-to-cart btn btn-secondary">Adicionar</button>
                     </div>
-                    </div>
+                </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
@@ -113,7 +131,8 @@
                 <div class="product-item" data-id="burger-x" data-name="Mega Cheddar" data-price="29.90">
                     <img src="img/Mega-Cheddar.webp" alt="Mega Cheddar" loading="lazy">>
                     <h3>Mega Cheddar</h3>
-                    <p>Hambúrguer artesanal de carne bovina 120g, cheddar cremoso + cheddar Extra, cebola caramelizada.</p>
+                    <p>Hambúrguer artesanal de carne bovina 120g, cheddar cremoso + cheddar Extra, cebola caramelizada.
+                    </p>
                     <span class="price">R$ 29,90</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -121,7 +140,8 @@
                 <div class="product-item" data-id="burger-y" data-name="Frango Crispy" data-price="22.50">
                     <img src="img/frango-crocante.webp" alt="Frango Crispy" loading="lazy">>
                     <h3>Frango Crispy</h3>
-                    <p>Hamburger artesanal de Filé de frango empanado crocante 120g, cheddar, alface, maionese especial.</p>
+                    <p>Hamburger artesanal de Filé de frango empanado crocante 120g, cheddar, alface, maionese especial.
+                    </p>
                     <span class="price">R$ 22,50</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -129,15 +149,18 @@
                 <div class="product-item" data-id="burger-z" data-name="Bacon Supremo" data-price="38.00">
                     <img src="img/bacon-supreme.webp" alt="Bacon Supremo" loading="lazy">>
                     <h3>Bacon Supremo</h3>
-                    <p>Hambúrguer artesanal de duas carnes de 80g , cheddar cremoso + cheddar Extra, bacon e molho barbecue artesanal.</p>
+                    <p>Hambúrguer artesanal de duas carnes de 80g , cheddar cremoso + cheddar Extra, bacon e molho
+                        barbecue artesanal.</p>
                     <span class="price">R$ 38,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-                
-                <div class="product-item status-embreve" data-id="burger-u" data-name="Fresh Supreme" data-price="26.50" >
+
+                <div class="product-item status-embreve" data-id="burger-u" data-name="Fresh Supreme"
+                    data-price="26.50">
                     <img src="img/Fresh-Supreme.webp" alt="Fresh Supreme" loading="lazy">>
                     <h3>Fresh Supreme</h3>
-                    <p>Hambúrguer artesanal na brasa 120g, , cheddar, cebola caramelizada, alface, cebola roxa, tomate, picles.</p>
+                    <p>Hambúrguer artesanal na brasa 120g, , cheddar, cebola caramelizada, alface, cebola roxa, tomate,
+                        picles.</p>
                     <span class="status-badge">Em Breve</span>
                     <span class="price">R$ 26,50</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
@@ -146,7 +169,8 @@
                 <div class="product-item" data-id="burger-k" data-name="Frango Bacon Grelhado" data-price="27.50">
                     <img src="img/Frango-bacon-grill.webp" alt="Frango Bacon Grelhado" loading="lazy">>
                     <h3>Frango Bacon Grelhado</h3>
-                    <p>Hambúrguer artesanal de frango na brasa 120g, maionese temperada, cheddar + cheddar Extra, bacon, alface, cebola roxa,  .</p>
+                    <p>Hambúrguer artesanal de frango na brasa 120g, maionese temperada, cheddar + cheddar Extra, bacon,
+                        alface, cebola roxa, .</p>
                     <span class="price">R$ 27,50</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
@@ -175,8 +199,9 @@
                     <span class="price">R$ 7,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-                
-                <div class="product-item" data-id="Fanta-laranja" data-name="Fanta-laranja Lata 350ml" data-price="7.00">
+
+                <div class="product-item" data-id="Fanta-laranja" data-name="Fanta-laranja Lata 350ml"
+                    data-price="7.00">
                     <img src="img/fanta-laranja.webp" alt="Fanta-laranja Lata" loading="lazy">>
                     <h3>Fanta Laranja Lata</h3>
                     <p>Refrigerante Fanta laranja em lata 350ml.</p>
@@ -184,7 +209,8 @@
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
 
-                <div class="product-item" data-id="guarana-antarctica" data-name="Guarana-Antarctica Lata 350ml" data-price="7.00">
+                <div class="product-item" data-id="guarana-antarctica" data-name="Guarana-Antarctica Lata 350ml"
+                    data-price="7.00">
                     <img src="img/guarana-antarctica.webp" alt="Guarana-Antarctica Lata" loading="lazy">>
                     <h3>Guaraná Antartica Lata</h3>
                     <p>Refrigerante Guaraná Antarctica em lata 350ml.</p>
@@ -198,26 +224,27 @@
             <h2>
                 TRADICIONAIS
             </h2>
+
             <div class="product-grid">
+
                 <div class="product-item" data-id="X-TUDO2C" data-name="X-TUDO 2 CARNES" data-price="25.00">
                     <img src="img/xtudo2.webp" alt="X-TUDO 2 CARNES" loading="lazy">>
                     <h3>X-TUDO 2 CARNES</h3>
-                    <p>X-TUDO  com 2 carnes de 90g, ovo, presunto, mussarela, bacon, frango desfiado, catupiry, tomate, alface, milho, batata palha.</p>
+                    <p>X-TUDO com 2 carnes de 90g, ovo, presunto, mussarela, bacon, frango desfiado, catupiry, tomate,
+                        alface, milho, batata palha.</p>
                     <span class="price">R$ 25,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-            </div>
 
-            <div class="product-grid">
                 <div class="product-item" data-id="X-TUDO" data-name="X-TUDO" data-price="22.00">
                     <img src="img/xtudo.webp" alt="X-TUDO" loading="lazy">>
                     <h3>X-TUDO</h3>
-                    <p>X-TUDO carne de 90g, ovo, presunto, mussarela, bacon, frango desfiado, catupiry, tomate, alface, milho, batata palha.</p>
+                    <p>X-TUDO carne de 90g, ovo, presunto, mussarela, bacon, frango desfiado, catupiry, tomate, alface,
+                        milho, batata palha.</p>
                     <span class="price">R$ 22,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-            </div>
-            <div class="product-grid">
+
                 <div class="product-item" data-id="X-FRANGO" data-name="X-FRANGO" data-price="18.00">
                     <img src="img/xfrango.webp" alt="X-FRANGO" loading="lazy">>
                     <h3>X-FRANGO</h3>
@@ -225,9 +252,7 @@
                     <span class="price">R$ 18,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-            </div>
 
-            <div class="product-grid">
                 <div class="product-item" data-id="X-BACON" data-name="X-BACON" data-price="20.00">
                     <img src="img/xbacon.webp" alt="X-BACON" loading="lazy">>
                     <h3>X-BACON</h3>
@@ -235,9 +260,7 @@
                     <span class="price">R$ 20,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
-            </div>
 
-            <div class="product-grid">
                 <div class="product-item" data-id="X-CK" data-name="X-CKBURGER" data-price="14.00">
                     <img src="img/xck.webp" alt="X-CKBURGER" loading="lazy"><br>
                     <h3>X-CKBURGER</h3>
@@ -245,8 +268,8 @@
                     <span class="price">R$ 14,00</span>
                     <button class="add-to-cart btn btn-secondary">Adicionar</button>
                 </div>
+
             </div>
-            
         </section>
     </main>
 
@@ -256,7 +279,7 @@
             <button id="close-cart" class="close-button">&times;</button>
         </div>
         <div id="cart-items" class="cart-items-list">
-            </div>
+        </div>
         <div class="cart-summary">
             <p>Subtotal: <span id="cart-total">R$ 0,00</span></p>
             <p class="delivery-info" alt="Raio de 5km">Taxa de Entrega mínima: R$5,00</p>
@@ -270,104 +293,109 @@
     </button>
 
     <footer class="footer" id="contato">
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="img/BACK-FOOTER.mp4" type="video/mp4">
-    <img src="img/logos/BURGER.webp" alt="Imagem de fundo">
-  </video>
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="img/BACK-FOOTER.mp4" type="video/mp4">
+            <img src="img/logos/BURGER.webp" alt="Imagem de fundo">
+        </video>
 
-  <div class="bg-overlay"></div>
+        <div class="bg-overlay"></div>
 
-  <div class="footer-content-wrapper">
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="img/logos/BURGER.webp" alt="CK Burger Belo Horizonte Hamburger artesanal feito na brasa">
-      </div>
-      <p>O verdadeiro sabor feito na brasa 🔥</p>
-  
-      <div class="footer-contacts">
-        <a href="tel:+5531984833222">
-          <img src="/img/logos/phone-calling-svgrepo-com.svg" alt="">
-        </a>
-        <a href="https://wa.me/5531984833222" target="_blank">
-          <img src="/img/logos/whatsapp-svgrepo-com.svg" alt="">
-        </a>
-        <a href="https://instagram.com/ckburgergrill" target="_blank">
-          <img src="/img/logos/instagram-1-svgrepo-com.svg" alt="">
-        </a>
-        <a href="https://www.ifood.com.br/delivery/belo-horizonte-mg/ckburger-grill-ermelinda/44953a47-ed32-437e-963e-ad30a7b2760c" target="_blank">
-          <img src="/img/logos/ifood.png" alt="">
-        </a>
-        <a href="https://oia.99app.com/dlp9/dUd7Ub?area=BR" target="_blank">
-          <img src="/img/logos/99food.png" alt="">
-        </a>
-      </div>
-    </div>
+        <div class="footer-content-wrapper">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="img/logos/BURGER.webp" alt="CK Burger Belo Horizonte Hamburger artesanal feito na brasa">
+                </div>
+                <p>O verdadeiro sabor feito na brasa 🔥</p>
 
-    
-        
-        <div id="modalConfirmacao" class="modal-overlay cart-hidden">
-    <div class="modal-content">
-        <span class="close-btn-modal">&times;</span>
-        <h2>Dados para Confirmação do Pedido</h2>
-        <form id="formularioCliente">
-            
-            <label for="clienteNome">Seu Nome:</label>
-            <input type="text" id="clienteNome" name="clienteNome" required>
+                <div class="footer-contacts">
+                    <a href="tel:+5531984833222">
+                        <img src="/img/logos/phone-calling-svgrepo-com.svg" alt="">
+                    </a>
+                    <a href="https://wa.me/5531984833222" target="_blank">
+                        <img src="/img/logos/whatsapp-svgrepo-com.svg" alt="">
+                    </a>
+                    <a href="https://instagram.com/ckburgergrill" target="_blank">
+                        <img src="/img/logos/instagram-1-svgrepo-com.svg" alt="">
+                    </a>
+                    <a href="https://www.ifood.com.br/delivery/belo-horizonte-mg/ckburger-grill-ermelinda/44953a47-ed32-437e-963e-ad30a7b2760c"
+                        target="_blank">
+                        <img src="/img/logos/ifood.png" alt="">
+                    </a>
+                    <a href="https://oia.99app.com/dlp9/dUd7Ub?area=BR" target="_blank">
+                        <img src="/img/logos/99food.png" alt="">
+                    </a>
+                </div>
+            </div>
 
-            <label for="clienteRua">Rua e Número:</label>
-            <input type="text" id="clienteRua" name="clienteRua" placeholder="Ex: Rua das Flores, 123" required>
 
-            <label for="clienteBairro">Bairro:</label>
-            <input type="text" id="clienteBairro" name="clienteBairro" required>
 
-            <label for="clienteReferencia">Ponto de Referência (Opcional):</label>
-            <input type="text" id="clienteReferencia" name="clienteReferencia" placeholder="Ex: Ao lado da farmácia">
+            <div id="modalConfirmacao" class="modal-overlay cart-hidden">
+                <div class="modal-content">
+                    <span class="close-btn-modal">&times;</span>
+                    <h2>Dados para Confirmação do Pedido</h2>
+                    <form id="formularioCliente">
 
-            <label for="clienteWhatsapp">Seu WhatsApp (Principal):</label>
-            <input type="tel" id="clienteWhatsapp" name="clienteWhatsapp" placeholder="DDD + Número (ex: 31987654321)" required>
+                        <label for="clienteNome">Seu Nome:</label>
+                        <input type="text" id="clienteNome" name="clienteNome" required>
 
-            <button type="submit" id="finalizarPedidoModalBtn" class="btn btn-primary btn-full-width">
-                Confirmar e Enviar para WhatsApp
-            </button>
-        </form>
-    </div>
-</div>
-       <div class="footer-bottom">
-      <p>&copy; 2025 Ck Burger - Todos os direitos reservados</p>
-    </div>
-  </div>
-</footer>
-      
+                        <label for="clienteRua">Rua e Número:</label>
+                        <input type="text" id="clienteRua" name="clienteRua" placeholder="Ex: Rua das Flores, 123"
+                            required>
+
+                        <label for="clienteBairro">Bairro:</label>
+                        <input type="text" id="clienteBairro" name="clienteBairro" required>
+
+                        <label for="clienteReferencia">Ponto de Referência (Opcional):</label>
+                        <input type="text" id="clienteReferencia" name="clienteReferencia"
+                            placeholder="Ex: Ao lado da farmácia">
+
+                        <label for="clienteWhatsapp">Seu WhatsApp (Principal):</label>
+                        <input type="tel" id="clienteWhatsapp" name="clienteWhatsapp"
+                            placeholder="DDD + Número (ex: 31987654321)" required>
+
+                        <button type="submit" id="finalizarPedidoModalBtn" class="btn btn-primary btn-full-width">
+                            Confirmar e Enviar para WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ck Burger - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Modal de Aviso -->
-<div id="alertModal" class="alert-modal hidden">
-  <div class="alert-content">
-    <p id="alertMessage">Mensagem de exemplo</p>
-    <button id="alertCloseBtn">OK</button>
-  </div>
-</div>
+    <div id="alertModal" class="alert-modal hidden">
+        <div class="alert-content">
+            <p id="alertMessage">Mensagem de exemplo</p>
+            <button id="alertCloseBtn">OK</button>
+        </div>
+    </div>
 
 
-      <script>
-  // Mostrar botão quando rolar para baixo
-  const btnTopo = document.getElementById("btnTopo");
-  window.addEventListener("scroll", () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      btnTopo.style.display = "block";
-    } else {
-      btnTopo.style.display = "none";
-    }
-  });
-  
+    <script>
+        // Mostrar botão quando rolar para baixo
+        const btnTopo = document.getElementById("btnTopo");
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                btnTopo.style.display = "block";
+            } else {
+                btnTopo.style.display = "none";
+            }
+        });
 
-  // Ação ao clicar: rolar suavemente para o topo
-  btnTopo.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
+
+        // Ação ao clicar: rolar suavemente para o topo
+        btnTopo.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="titulo-dinamico.js"></script>
     <script src="script.js"></script>
- 
+
 </body>
+
 </html>
